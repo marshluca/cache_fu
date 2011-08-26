@@ -4,6 +4,8 @@ require File.dirname(__FILE__) + '/acts_as_cached/benchmarking'
 require File.dirname(__FILE__) + '/acts_as_cached/disabled'
 require File.dirname(__FILE__) + '/acts_as_cached/railtie' if defined?(Rails::Railtie)
 
+require "memcache" unless defined?(MemCache) # memcache-client
+
 module ActsAsCached
   @@config = {}
   mattr_reader :config
